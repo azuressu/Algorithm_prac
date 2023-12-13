@@ -7,25 +7,26 @@ import java.util.StringTokenizer;
 
 
 public class P12891_DNA비밀번호  {
-    static int myArr[];
-    static int checkArr[];
+    static int[] myArr;
+    static int[] checkArr;
     static int checkSecret;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
         int S = Integer.parseInt(st.nextToken());
         int P = Integer.parseInt(st.nextToken());
+
         int Result = 0;
-        myArr = new int[4];
-        checkArr = new int [4];
+        myArr = new int[4];      // 비밀번호를 확인할 배열
+        checkArr = new int [4];  // 현재 상태의 배열
 
         char A[] = new char[S];
         checkSecret = 0; // 찾아낸 비밀번호의 개수
 
-        A = bf.readLine().toCharArray(); // 입력받은 문자열을 배열로
-        st = new StringTokenizer(bf.readLine());
+        A = br.readLine().toCharArray(); // 입력받은 문자열을 배열로
+        st = new StringTokenizer(br.readLine());
 
         for (int i=0; i<4; i++) {
             checkArr[i] = Integer.parseInt(st.nextToken());
@@ -45,12 +46,12 @@ public class P12891_DNA비밀번호  {
         for (int i=P; i<S; i++) {
             int j = i-P; // j가 맨 왼쪽, i가 맨 오른쪽 (범위의 처음과 끝임)
             Add(A[i]);
-            Remove(A[i]);
+            Remove(A[j]);
             if (checkSecret == 4) Result++;
         }
 
         System.out.println(Result);
-        bf.close();
+        br.close();
 
     }
 
