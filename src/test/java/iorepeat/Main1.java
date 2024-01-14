@@ -1,3 +1,5 @@
+package iorepeat;
+
 import java.util.*;
 
 public class Main1 {

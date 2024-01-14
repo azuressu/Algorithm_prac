@@ -1,3 +1,5 @@
+package upgrade1;
+
 import java.util.Scanner;
 
 public class Main13 {

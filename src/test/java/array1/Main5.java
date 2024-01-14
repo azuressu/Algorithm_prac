@@ -1,3 +1,5 @@
+package array1;
+
 import java.util.*;
 import java.io.*;
 
